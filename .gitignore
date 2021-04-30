@@ -1,4 +1,4 @@
-.next
-.keystone
+.next/
+.keystone/
 node_modules/
 .env
