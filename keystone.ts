@@ -18,7 +18,11 @@ const { withAuth } = createAuth({
     secretField: 'password',
     initFirstItem: {
         fields: ['name', 'email', 'password'],
-
+    },
+    passwordResetLink: {
+        async sendToken(args){
+            console.log(args)
+        }
     }
 })
 export default withAuth(config({
