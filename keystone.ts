@@ -1,3 +1,5 @@
+import { extendGraphqlSchema } from './mutations/index';
+import { CartItem } from './schemas/CartItem';
 import { ProductImage } from './schemas/ProductImage';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
@@ -44,8 +46,10 @@ export default withAuth(config({
     lists: createSchema({
         User,
         Product,
-        ProductImage
+        ProductImage,
+        CartItem,
     }),
+    extendGraphqlSchema,
     ui: {
         //Show keystone UI only for people who passes the following test
         isAccessAllowed: ({ session }) => {
